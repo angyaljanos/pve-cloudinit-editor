@@ -1,0 +1,17 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "files": {
+    "includes": ["src/ui/**/*.js", "scripts/**/*.mjs", "test/**/*.js"]
+  },
+  "formatter": {
+    "useEditorconfig": true,
+    "lineWidth": 100
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "trailingCommas": "all"
+    },
+    "globals": ["Ext", "PVE", "Proxmox", "gettext"]
+  }
+}

@@ -1,0 +1,22 @@
+name: pve-cloudinit-editor-e2e
+
+services:
+  pve:
+    image: docker.io/dockurr/proxmox:${PVE_IMAGE_TAG:-9.2.27}
+    hostname: pve
+    privileged: true
+    environment:
+      PASSWORD: root
+      # KVM is only needed to start VMs; the editor works with stopped VMs.
+      REQUIRE_KVM: "N"
+    ports:
+      - "127.0.0.1:${PVE_PORT:-8006}:8006"
+    volumes:
+      - ../..:/opt/pve-cloudinit-editor:ro
+      - vz:/var/lib/vz
+      - cluster:/var/lib/pve-cluster
+    stop_grace_period: 2m
+
+volumes:
+  vz:
+  cluster:

@@ -1,16 +1,25 @@
 {
   "name": "pve-cloudinit-editor",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "test": "node --test"
+    "format": "biome check --write",
+    "lint": "biome check",
+    "test": "npm run test:ui && npm run test:api && npm run test:deploy",
+    "test:ui": "node --test test/*.test.js",
+    "test:api": "prove -I src/api test/",
+    "test:deploy": "python3 -m unittest discover -s test -p 'test_*.py'",
+    "test:e2e": "npm run build && test/e2e/run.sh",
+    "test:e2e:down": "test/e2e/run.sh down",
+    "check": "npm run lint && npm run build && npm test"
   },
   "dependencies": {
     "js-yaml": "^4.1.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.6.8",
     "esbuild": "^0.25.0"
   }
 }

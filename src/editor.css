@@ -1,0 +1,97 @@
+#pve-cloudinit-launcher,
+#pve-cloudinit-panel {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 2147483647;
+  font: 14px/1.4 system-ui, sans-serif;
+}
+
+#pve-cloudinit-launcher {
+  right: 20px;
+  bottom: 20px;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 5px;
+  background: #0069a6;
+  color: white;
+  box-shadow: 0 2px 8px #0005;
+  cursor: pointer;
+}
+
+#pve-cloudinit-panel {
+  right: 20px;
+  bottom: 68px;
+  display: flex;
+  width: min(560px, calc(100vw - 40px));
+  height: min(520px, calc(100vh - 100px));
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid #aeb8c2;
+  border-radius: 6px;
+  background: #fff;
+  color: #202124;
+  box-shadow: 0 4px 18px #0005;
+}
+
+#pve-cloudinit-panel[hidden] {
+  display: none;
+}
+
+#pve-cloudinit-panel header,
+#pve-cloudinit-panel .pve-cloudinit-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#pve-cloudinit-panel button {
+  padding: 7px 11px;
+  border: 0;
+  border-radius: 4px;
+  background: #0069a6;
+  color: white;
+  cursor: pointer;
+  font: inherit;
+}
+
+#pve-cloudinit-panel #pve-cloudinit-close {
+  padding: 2px 8px;
+  background: transparent;
+  color: #202124;
+  font-size: 22px;
+}
+
+#pve-cloudinit-panel textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 0;
+  flex: 1;
+  resize: vertical;
+  padding: 10px;
+  border: 1px solid #89939d;
+  border-radius: 4px;
+  background: #fff;
+  color: #202124;
+  font: 13px/1.5 ui-monospace, monospace;
+}
+
+#pve-cloudinit-panel button:focus-visible,
+#pve-cloudinit-panel textarea:focus-visible,
+#pve-cloudinit-launcher:focus-visible {
+  outline: 2px solid #173f70;
+  outline-offset: 2px;
+}
+
+#pve-cloudinit-panel p {
+  min-height: 1.4em;
+  margin: 0;
+}
+
+#pve-cloudinit-result[data-valid="true"] {
+  color: #187438;
+}
+
+#pve-cloudinit-result[data-valid="false"] {
+  color: #a12622;
+}

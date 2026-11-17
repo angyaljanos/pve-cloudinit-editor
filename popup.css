@@ -1,0 +1,39 @@
+body {
+  width: 280px;
+  margin: 0;
+  color: #202124;
+  font: 14px/1.45 system-ui, sans-serif;
+}
+
+main {
+  padding: 16px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+p {
+  margin: 0 0 12px;
+}
+
+button {
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 4px;
+  background: #0069a6;
+  color: white;
+  cursor: pointer;
+  font: inherit;
+}
+
+button:focus-visible {
+  outline: 2px solid #202124;
+  outline-offset: 2px;
+}
+
+#status {
+  margin: 12px 0 0;
+  color: #a12622;
+}
